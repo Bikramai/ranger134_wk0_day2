@@ -38,6 +38,8 @@ print(sub)
 prod = 5 * 5
 print(prod)
 
+# Power! **
+
 # Divide /
 div1 = 25 / 5
 print(div1)
@@ -133,14 +135,15 @@ print(interp2)
 #lists!
 print('\nLISTS:')
 # list are:
-#ordered (indeexed), dynamic, muteable
+#ordered (indexed), dynamic, muteable, iterable
 
 a_list = []
 print(a_list, type(a_list))
-nums_list = [1,2,3,4,5]
+nums_list = [1,2,3,4,5,6]
 print(nums_list)
-r_list =['a', 1, 5.0, None, True, []]
+r_list =['a', 1, 5.0, None, True,[], False ]
 print(r_list)
+print(r_list[0])
 print(r_list[3])
 print(r_list[2])
 print(len (r_list))
@@ -162,19 +165,27 @@ a_list.append(False)
 print(a_list)
 
 #pop():
-#  takes out the last item of the list
+#  takes out the last item of the list or remove out the last items of the list, position of the item
 
 r_list.pop()
 print(r_list)
 # but there's more for pop!
 #we can store it to a variable, and also there is an OPTIONAL parameter to specify which position to pop from
-a = r_list.pop(0)
+a = r_list.pop(0) #remove is going by value where as pop is going by position. inplace operation where as return
 print(a)
 
+r_list.append(None) 
+print(r_list)
 
+#remove()
+#removes the FIRST occurence of the specified value
+print('CRAZY POP EXAMPLE')
+r_list.remove(None)
+print()
 
-# looping 
+# looping - aka iterating
 print('\nLOOPING:')
+
 
 print(a_list, r_list)
 
@@ -186,6 +197,7 @@ for r in r_list:
     print(r)
 
 for a in a_list:
+    print(a**3)
     print(a)
 
 # range function --> frange (start, stop, step)
@@ -198,13 +210,83 @@ print('\n')
 for x in  range(10,4,-1):
     print(x)
 print('\n')
-for x in range(5):
+for x in range(10):
     print('this is 5 steps')
 
+# the index loop - use the range function - print the index 
+#   syntax -->  for i in range(len(iterable)):
+                    # code block
+print(a_list)
+print('\nIndex LOOP:')    
+for i in range(len(a_list)):
+    print(i, a_list[i])
+
+
+# syntax    while condition:
+                    #code block
+
+while True:
+    print(x)
+    #DON'T DO INFINITE LOOPS!
+    break
+
+l = 0
+while l < len(a_list):
+    print(a_list[1]) # ctrl + c
+    l += 1  # we can do l = l + 1 #see sidenote below about incrementing
+
+# incrementing and decrementing
+# saying l + 1 is not actually saving a value; it's just refencing a number without changing the variable
+# we have to l = l + 1 OR the shorthand l += 1
+# This can be used with all the other math operators:
+# -=  *= /=
+
+# the while loop - both the index and for loop are kinda a pre-define where as 
+# while loop is user defined us we taking the range 
+
+print('contionals:')
+# if, elif, else
+age = 45
+
+if age < 18:
+    print('kid')
+elif age > 64:
+    print('senior')
+else:
+    print('adult')
+# Each one is only firing if the conditional is true.
+
+if age >17 and age < 65: #another example using and 
+    print('adult')
+
+#if age > 17 and <65: not complete!
 
 #True tree:
 #T and T == True
-#T and F ==
+#T and F == False
+#F and F == False
+
+#T or T == True
+#T or F == True
+#F or F == False
+
+# functions:
+# syntax def funcname(parameters)
+                #codeblock
+
+def hello(name):
+    st = f"Welcome to Rangers {name.title()}" # we can call as recipe eg my birth cake
+    print(st)  #is sugar etc and the code block is saying 
+
+hello('Bikram') #this is Bikram is not a parameter anymore now it an argument.
+
+
+a_name = 'Kymbat'
+# membership checks ----> the "in" word
+if 'b' in a_name:
+    print('YEP it\'s in there!')
+
+print( 567 in a_list)
 
 
 
