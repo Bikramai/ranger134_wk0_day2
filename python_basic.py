@@ -246,14 +246,20 @@ while l < len(a_list):
 
 print('contionals:')
 # if, elif, else
+# with the if statement - if the statement is true if age < 18:
+#       fire this condition print('kid')
+# and the we are moving, we are not limiting anything else 
+# if we want to check the same condition age = 17, 35, 70. It only takes one condition, it only takes one 
+# different action base on it because we get both of this print statements 
+# but if we have if, elif, else we can fire all condition at  
 age = 45
 
 if age < 18:
     print('kid')
-elif age > 64:
-    print('senior')
-else:
+elif age > 18 and age < 64:
     print('adult')
+else:
+    print('senior')
 # Each one is only firing if the conditional is true.
 
 if age >17 and age < 65: #another example using and 
@@ -280,13 +286,77 @@ def hello(name):
 
 hello('Bikram') #this is Bikram is not a parameter anymore now it an argument.
 
-
 a_name = 'Kymbat'
 # membership checks ----> the "in" word
 if 'b' in a_name:
     print('YEP it\'s in there!')
 
 print( 567 in a_list)
+print('\n\n')
+
+def voter_age(num):
+    if num < 18:
+        print('kid')
+        if num < 1:
+            print('Jus a little baby')
+    elif num > 18 and num < 64:
+        print('adult')
+    else:
+        print('senior')
+    
+voter_age(15)
+voter_age(21)
+voter_age(67)
+voter_age(0)
+
+# local scope 
+# global scope
+
+# for loop
+names = ['Bikram','Javier','Ben','Kym','Grace', 'Michael']
+
+for name in names:
+    print(name)
+    last = input('What is your last name?  ')
+    x = f"This is your full name: {name.title()} {last.title()}"
+    print(f'\t{x}')
+    print('\n')
+
+
+# transfer or convert for loop into functon
+# def full_name():
+#     first = input('What is your first name? ')
+#     second = input('What is your last name? ')
+#     print(first.title() + ' ' + second.title())
+
+# full_name()
+print('\n\n')
+
+names = ['Bikram','Javier','Ben','Kym','Grace', 'Michael']
+n_l = ['random string', 'also a string', 'this won\t make sense']
+def full_name():
+    first = input('What is your first name? ')
+    second = input('What is your last name? ')
+    print(first.title() + ' ' + second.title())
+
+# full_name()
+
+def name_list(list):
+    for l in list:
+        print(l.title()+' .......last name unknown')
+
+name_list(names)
+name_list(n_l)
+
+
+
+
+
+
+print('\n\n')
+
+
+
 
 
 
